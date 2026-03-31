@@ -260,7 +260,7 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
 
 /* ── PAGE HERO ── */
 .page-hero {
-  background: url('/mjm-groundworks/img/hero1.jpg') center/cover no-repeat;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
   position: relative; height: 220px;
 }
 .page-hero::after {
