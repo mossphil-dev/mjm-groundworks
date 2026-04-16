@@ -271,6 +271,7 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
 /* ── PAGE HEADING (below hero) ── */
 .page-heading {
   background: var(--white); padding: 28px 0 24px; border-bottom: 1px solid var(--border);
+  position: relative; z-index: 1;
 }
 .page-heading h1 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 700; color: var(--dark); margin-top: 4px; }
 .page-heading p { font-size: 15px; color: var(--text); margin-top: 6px; }
@@ -412,7 +413,11 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
 }
 
 /* ── BREADCRUMBS ── */
-.breadcrumbs { padding: 12px 0; font-size: 13px; color: #999; position: relative; z-index: 1; }
+.breadcrumbs {
+  padding: 12px 0; font-size: 13px; color: #999;
+  position: static; background: none; border-bottom: none;
+  box-shadow: none; z-index: auto;
+}
 .breadcrumbs a { color: var(--gold); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--dark); }
 .breadcrumbs span { margin: 0 6px; }
