@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | MJM Groundworks LTD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .nf-wrap {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .nf-content h1 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .nf-content p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    .nf-content .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background 0.3s;
+    }
+    .nf-content .btn:hover {
+      background: var(--gold-dark);
+    }
+    #redirect-msg {
+      display: none;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      background: #f0f7f0;
+      border-left: 4px solid #4a9e4a;
+      font-size: 0.95rem;
+      color: #2d5a2d;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <script>
+    (function() {
+      var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+
+      var redirects = {
+        'digger-hire':      '/digger-hire/',
+        'drainage':         '/drainage/',
+        'foundations':      '/foundation-services/',
+        'groundworks-contractor': '/services/',
+        'groundworks-in':   '/services/',
+        'new-builds':       '/new-build-groundworks/',
+        'landscaping':      '/landscaping/',
+        'fencing':          '/fencing/',
+        'excavat':          '/excavation/',
+        'site-clearance':   '/site-clearance/',
+        'concrete':         '/concrete-bases/',
+        'resin':            '/driveways/',
+        'driveway':         '/driveways/'
+      };
+
+      var keys = Object.keys(redirects);
+      for (var i = 0; i < keys.length; i++) {
+        if (path.indexOf(keys[i]) !== -1) {
+          window.location.replace(redirects[keys[i]]);
+          return;
+        }
+      }
+
+      // County/region redirects
+      var regions = ['surrey', 'berkshire', 'hertfordshire', 'hampshire', 'london', 'middlesex', 'buckinghamshire', 'kent'];
+      for (var j = 0; j < regions.length; j++) {
+        if (path.indexOf(regions[j]) !== -1) {
+          window.location.replace('/services/');
+          return;
+        }
+      }
+
+      // WordPress leftovers
+      if (path.indexOf('/category/') !== -1 || path.indexOf('/author/') !== -1 || path.indexOf('/tag/') !== -1) {
+        window.location.replace('/');
+        return;
+      }
+
+      // services-2 was the old WP services page
+      if (path.indexOf('services-2') !== -1) {
+        window.location.replace('/services/');
+        return;
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="nf-wrap">
+    <div class="nf-content">
+      <h1>Page Not Found</h1>
+      <div id="redirect-msg">Redirecting you to the right page...</div>
+      <p>Sorry, the page you're looking for has moved or no longer exists.</p>
+      <a href="/" class="btn">Back to Homepage</a>
+      <br><br>
+      <a href="/services/" style="color:var(--gold);font-weight:600;">View Our Services</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/contact/" style="color:var(--gold);font-weight:600;">Contact Us</a>
+    </div>
+  </div>
+</body>
+</html>
