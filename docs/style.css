@@ -298,7 +298,7 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
   .contact-grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  nav { position: relative; z-index: 9999; }
+  nav { position: sticky; top: 0; z-index: 9999; }
   .nav-links {
     display: flex !important;
     flex-direction: column;
@@ -412,7 +412,7 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
 }
 
 /* ── BREADCRUMBS ── */
-.breadcrumbs { padding: 12px 0; font-size: 13px; color: #999; }
+.breadcrumbs { padding: 12px 0; font-size: 13px; color: #999; position: relative; z-index: 1; }
 .breadcrumbs a { color: var(--gold); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--dark); }
 .breadcrumbs span { margin: 0 6px; }
