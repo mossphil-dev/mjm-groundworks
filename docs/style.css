@@ -438,3 +438,5 @@ footer { background: var(--darker); color: #aaa; padding: 48px 0 24px; }
 .blog-post p { margin-bottom: 16px; line-height: 1.8; }
 .blog-post ul, .blog-post ol { margin: 16px 0; padding-left: 24px; }
 .blog-post li { margin-bottom: 8px; line-height: 1.6; }
+.blog-post a { color: #e8272a; text-decoration: underline; }
+.blog-post a:hover { color: #c41f22; }
